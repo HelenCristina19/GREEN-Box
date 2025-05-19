@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/assinatura.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">Green Box</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+         <li><a href="assinatura.html" class="active">Assinatura</a></li>
+        <li><a href="login.html">Login</a></li>
+         <li><a href="cadastro.html">Cadastro</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+ <main class="pagina-assinatura">
+  <h1>Escolha seu plano de assinatura ecológica</h1>
+  <p>Receba produtos sustentáveis todo mês com a sua Green Box personalizada!</p>
+
+  <div class="planos-container">
+    <div class="plano">
+      <h2>Little Box</h2>
+      <p>Ideal para quem está começando a jornada ecológica.</p>
+      <span class="preco">R$ 39,90/mês</span>
+      <button onclick="assinarPlano('Little Box')">Assinar</button>
+    </div>
+
+    <div class="plano destaque">
+      <h2>Medium Box</h2>
+      <p>Nosso plano mais popular com variedade balanceada.</p>
+      <span class="preco">R$ 59,90/mês</span>
+      <button onclick="assinarPlano('Medium Box')">Assinar</button>
+    </div>
+
+    <div class="plano">
+      <h2>Big Box</h2>
+      <p>Mais produtos e benefícios para toda a família.</p>
+      <span class="preco">R$ 89,90/mês</span>
+      <button onclick="assinarPlano('Big Box')">Assinar</button>
+    </div>
+  </div>
+</main>
+ 
+ <footer class="footer-final">
+    <p>&copy; 2025 Green Box — Produtos Sustentáveis. Todos os direitos reservados.</p>
+  </footer>
+ 
+ <!-- script
+  <script>
+    function assinarNewsletter(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      alert("E-mail " + email + " cadastrado com sucesso!");
+      document.getElementById("email").value = "";
+    }
+  </script> -->
+</body>
+</html>

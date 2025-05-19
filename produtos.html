@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Green Box - Assinatura</title>
+  <link rel="stylesheet" href="./css/produto.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">Green Box</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html" class="active">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+         <li><a href="assinatura.html">Assinatura</a></li>
+        <li><a href="login.html">Login</a></li>
+         <li><a href="cadastro.html">Cadastro</a></li>
+       
+        <li>
+          <a href="#" class="carrinho">
+            Carrinho (<span id="contador">0</span>)
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="produtos-section">
+    <h1>Nossos Produtos</h1>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="./css/img/oleos-vegetais.jpg" alt="Óleos Vegetais" />
+        <h2>Óleos Vegetais</h2>
+        <p>Com óleos vegetais e fragrância suave.</p>
+        <button onclick="adicionarCarrinho('Óleos Vegetais')">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="./css/img/creme-barbear.jpg" alt="Creme De Barbear" />
+        <h2>Creme De Barbear</h2>
+        <p>Hidrata sua pele</p>
+        <button onclick="adicionarCarrinho('Creme De Barbear')">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="./css/img/kit-escovas.jpg" alt="Kit Escovas" />
+        <h2>Kit Escovas</h2>
+        <p>Escovas de bambu</p>
+        <button onclick="adicionarCarrinho('Shampoo Sólido')">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="./css/img/oleo-coco.jpg" alt="Óleo de Coco" />
+        <h2>Óleo de Coco</h2>
+        <p>Com propriedades e vitaminas</p>
+        <button onclick="adicionarCarrinho('Óleo de Coco')">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="./css/img/desodorante.jpg" alt="Desodorante" />
+        <h2>Desodorante</h2>
+        <p>Com a melhor duração</p>
+        <button onclick="adicionarCarrinho('Desodorante')">Adicionar ao carrinho</button>
+      </div>
+
+       <div class="produto">
+        <img src="./css/img/serum-maquiagem.jpg" alt="Serum Maquiagem" />
+        <h2>Serum</h2>
+        <p>Ajuda na fixação da sua Maquiagem</p>
+        <button onclick="adicionarCarrinho('Serum')">Adicionar ao carrinho</button>
+      </div>
+
+       <div class="produto">
+        <img src="./css/img/climatizador-infatil.jpg" alt="Climatizador Infantil" />
+        <h2>Climatizador Infantil</h2>
+        <p>Sucesso de aprovação entre as crianças</p>
+        <button onclick="adicionarCarrinho('Climatizador Infantil')">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="./css/img/plantinha-umidificadora.jpg" alt="Plantinha Umidificadora" />
+        <h2>Plantinha Umidificadora</h2>
+        <p>Ajuda na umidificação do ar</p>
+        <button onclick="adicionarCarrinho('Plantinha Umidificadora')">Adicionar ao carrinho</button>
+      </div>
+      <div class="produto">
+        <img src="./css/img/shampoo-barra.jpg" alt="Shampoo em Barra" />
+        <h2>Shampoo em Barra</h2>
+        <p>Livre de embalagens plásicas</p>
+        <button onclick="adicionarCarrinho('Shampoo em Barra')">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="./css/img/bucha-vegetal.jpg" alt="Bucha Vegetal" />
+        <h2>Bucha Vegetal</h2>
+        <p>A queridinha mais antiga da população brasileira</p>
+        <button onclick="adicionarCarrinho('Bucha Vegetal')">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="./css/img/creme-dental.jpg" alt="Creme Dental" />
+        <h2>Creme Dental</h2>
+        <p>Para dentes mais limpos e saudáveis </p>
+        <button onclick="adicionarCarrinho('Creme Dental')">Adicionar ao carrinho</button>
+      </div>
+      
+      <div class="produto">
+        <img src="./css/img/absorventes-eco.jpg" alt="Abbsorvente Eco" />
+        <h2>Absorventes Ecco</h2>
+        <p>O melhor do mercado</p>
+        <button onclick="adicionarCarrinho('Absorventes Eco')">Adicionar ao carrinho</button>
+      </div>
+      
+    </div>
+
+    <div class="finalizar-container">
+      <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+  </main>
+ 
+    <footer class="footer-final">
+  <p>&copy; 2025 Green Box — Produtos Sustentáveis. Todos os direitos reservados.</p>
+</footer>
+
+
+  <script>
+    let contador = 0;
+    let carrinho = [];
+
+    function adicionarCarrinho(produto) {
+      contador++;
+      carrinho.push(produto);
+      document.getElementById('contador').innerText = contador;
+      alert(produto + " adicionado ao carrinho!");
+    }
+
+    function finalizarCompra() {
+      if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio.");
+      } else {
+        let lista = carrinho.join(', ');
+        alert("Você comprou: " + lista + "\nObrigado por comprar na Green Box!");
+        // Resetar carrinho
+        carrinho = [];
+        contador = 0;
+        document.getElementById('contador').innerText = contador;
+      }
+    }
+  </script>
+</body>
+</html>
